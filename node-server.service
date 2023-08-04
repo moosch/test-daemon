@@ -4,11 +4,15 @@ Documentation=https://github.com/moosch/test-daemon/README.md
 After=network.target
 
 [Service]
-Environment=PORT=4010
+Environment=PORT=4011
+Environment=SERVICE=4011
 Type=simple
 User=ubuntu
-ExecStart=/usr/bin/env bash /home/server/test-daemon/bin/server.js
+ExecStart=/usr/bin/env node /home/server/test-daemon/bin/server.js
 Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+
+# Enable to start on reboot
+sudo systemctl enable node-server.service
