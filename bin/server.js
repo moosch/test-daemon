@@ -14,7 +14,7 @@ server.on( 'request', ( req, res ) => {
         return void process.exit( 1 );
     }
 
-    res.writeHead( 200 ).end( 'Status ok' );
+    res.writeHead( 200 ).end( 'Status ok\n' );
 });
 
-server.listen( port, () => console.log( `Server running on http://localhost:${port}` ) );
+server.listen( port, () => console.log( `${name} running on http://localhost:${port}` ) );

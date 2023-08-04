@@ -7,7 +7,6 @@ After=network.target
 Environment=PORT=4011
 Environment=SERVICE=4011
 Type=simple
-User=ubuntu
 ExecStart=/usr/bin/env node /home/server/test-daemon/bin/server.js
 Restart=on-failure
 

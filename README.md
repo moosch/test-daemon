@@ -10,10 +10,17 @@ Something like this install script needs to be present on the Linux Ubuntu AMI.
 curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash-
 apt install -y nodejs git build-essential
 
-mkdir /home/server
-cd /home/server
+WRKDIR=/home/server
 
-# Pull down daemon
+if [ ! -d "$WRKDIR" ]; then
+    mkdir $WRKDIR
+fi
+cd $WRKDIR
+
+# Pull repo
+if [ -d /home/server/test-daemon ] ; then
+    rm -rf test-daemon
+fi
 git clone https://github.com/moosch/test-daemon.git
 
 # Copy systemD service file
@@ -26,3 +33,5 @@ sudo systemctl daemon-reload
 # Enable to start on reboot
 sudo systemctl enable node-server.service
 ```
+
+Check the SystemD service logs with `journalctl -u node-server.service`
