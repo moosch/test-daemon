@@ -1,0 +1,13 @@
+{
+  "name": "test-daemon",
+  "version": "1.0.0",
+  "description": "A super simple NodeJS daemon to test starting with SystemD",
+  "type": "module",
+  "main": "bin/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

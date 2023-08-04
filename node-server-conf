@@ -1,0 +1,14 @@
+[Unit]
+Description=node_server - Test server in NodeJS
+Documentation=https://github.com/moosch/test-daemon/README.md
+After=network.target
+
+[Service]
+Environment=PORT=4010
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/env bash /home/server/test-daemon/bin/server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
