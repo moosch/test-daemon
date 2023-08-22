@@ -12,6 +12,3 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-
-# Enable to start on reboot
-sudo systemctl enable node-server.service
